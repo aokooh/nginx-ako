@@ -9,6 +9,10 @@ spec:
   containers:
   - image: busybox
     name: hello-world
+    command:
+      - tail
+      - -f
+      - /dev/null
     resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always
