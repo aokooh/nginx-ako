@@ -11,13 +11,19 @@ spec:
   project: default
   
   source:
-    chart: sealed-secrets
-    repoURL: https://bitnami-labs.github.io/sealed-secrets
-    targetRevision: 1.16.1
+    chart: fluent
+    repoURL: https://fluent.github.io/helm-charts
+    targetRevision: v1.16.2
+
     helm:
-      releaseName: sealed-secrets
-      
+      releaseName: fluent-ako
+
   destination:
     server: https://kubernetes.default.svc
     namespace: ako-argocd-workshop
+
+  directory:
+    recurse: true
+    exclude: 'config.yaml'
+    include: '*.yaml'
     
