@@ -18,3 +18,8 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: ako-argocd-workshop
+    
+  directory:
+    recurse: false
+    exclude: 'config.yaml'
+    include: '*.yaml'
