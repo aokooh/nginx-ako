@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myfirstargoapp
+  name: mysecondargoapp
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   labels:
-    name: guestbook
+    name: mysecondargoapp
 spec:
   project: default
 
   source:
     repoURL: https://github.com/aokooh/nginx-ako.git
     targetRevision: HEAD
-    path: test-folder3
+    path: test-folder4
 
   destination:
     server: https://kubernetes.default.svc
