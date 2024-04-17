@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myfirstargoapp
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    name: guestbook
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/aokooh/nginx-ako.git
+    targetRevision: HEAD
+    path: test-folder3
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ako-argocd-workshop
