@@ -35,6 +35,6 @@ spec:
     namespace: ako-argocd-workshop
     
   directory:
-    recurse: false
+    recurse: true
     exclude: 'config.yaml'
     include: '*.yaml'
