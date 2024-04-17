@@ -16,7 +16,7 @@ spec:
     path: test-folder4
 
     # helm specific config
-    chart: chart-name
+    chart: fluentd-ako
     helm:
       releaseName: guestbook
       #valueFiles:
