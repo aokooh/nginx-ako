@@ -5,7 +5,7 @@ metadata:
     app: grafana-ako
   name: grafana-ako
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: grafana-ako
