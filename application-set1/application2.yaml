@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mysecondargoapp
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    name: mysecondargoapp
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/aokooh/nginx-ako.git
+    targetRevision: HEAD
+    path: test-folder4
+
+    # helm specific config
+    chart: fluentd-ako
+    helm:
+      releaseName: guestbook
+      #valueFiles:
+       #- values-prod.yaml
+
+      values: |
+        ingress:
+          enabled: true
+      #    ...
+      #valuesObject:
+       #  ingress:
+       #    enabled: true
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ako-argocd-workshop
+    
+  directory:
+    recurse: false
+    exclude: 'config.yaml'
+    include: '*.yaml'
