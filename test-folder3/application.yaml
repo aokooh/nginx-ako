@@ -15,6 +15,21 @@ spec:
     targetRevision: HEAD
     path: test-folder4
 
+    # helm specific config
+    chart: chart-name
+    helm:
+      releaseName: guestbook
+      #valueFiles:
+       #- values-prod.yaml
+
+      values: |
+        ingress:
+          enabled: true
+      #    ...
+      #valuesObject:
+       #  ingress:
+       #    enabled: true
+
   destination:
     server: https://kubernetes.default.svc
     namespace: ako-argocd-workshop
