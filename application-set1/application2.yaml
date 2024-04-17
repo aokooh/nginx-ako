@@ -13,7 +13,7 @@ spec:
   source:
     chart: fluent
     repoURL: https://fluent.github.io/helm-charts
-    targetRevision: v1.16.2
+    targetRevision: 0.5.2
 
     helm:
       releaseName: fluent-ako
