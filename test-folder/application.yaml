@@ -14,3 +14,7 @@ spec:
     repoURL: https://github.com/aokooh/nginx-ako.git
     targetRevision: HEAD
     path: test-folder3
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ako-argocd-workshop
