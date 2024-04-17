@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: myfirstargoapp
-  namespace: ako-argocd-workshop
+  namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   labels:
